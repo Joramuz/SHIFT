@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="autotests.DuckPropertiesTest" time="0.0" tests="2" errors="0" skipped="0" failures="2">
-    <testcase name="DuckPropertiesTest.propertiesEvenId" classname="autotests.DuckPropertiesTest" time="0.0">
+<testsuite name="autotests.tests.DuckPropertiesTest" time="0.0" tests="2" errors="0" skipped="0" failures="2">
+    <testcase name="DuckPropertiesTest.propertiesEvenId" classname="autotests.tests.DuckPropertiesTest" time="0.0">
       <failure type="com.consol.citrus.exceptions.ValidationException" message="Failed to validate JSON text:
 {} Number of JSON entries not equal for element: &apos;$.&apos;, expected &apos;5&apos; but was &apos;0&apos;">
         <![CDATA[
@@ -15,8 +15,8 @@
 	at com.consol.citrus.DefaultTestCase.executeAction(DefaultTestCase.java:136)
 	at com.consol.citrus.DefaultTestCaseRunner.run(DefaultTestCaseRunner.java:125)
 	at com.consol.citrus.TestActionRunner.$(TestActionRunner.java:35)
-	at autotests.DuckPropertiesTest.validateResponse(DuckPropertiesTest.java:97)
-	at autotests.DuckPropertiesTest.propertiesEvenId(DuckPropertiesTest.java:38)
+	at autotests.tests.DuckPropertiesTest.validateResponse(DuckPropertiesTest.java:97)
+	at autotests.tests.DuckPropertiesTest.propertiesEvenId(DuckPropertiesTest.java:38)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -81,7 +81,7 @@ Caused by: java.lang.IllegalArgumentException: Number of JSON entries not equal 
         ]]>
       </failure>
     </testcase>
-    <testcase name="DuckPropertiesTest.propertiesNotEvenId" classname="autotests.DuckPropertiesTest" time="0.0">
+    <testcase name="DuckPropertiesTest.propertiesNotEvenId" classname="autotests.tests.DuckPropertiesTest" time="0.0">
       <failure type="com.consol.citrus.exceptions.ValidationException" message="Failed to validate JSON text:
 {&quot;color&quot;:&quot;yellow&quot;,&quot;height&quot;:15.0,&quot;material&quot;:&quot;rubber&quot;,&quot;sound&quot;:&quot;quack&quot;,&quot;wingsState&quot;:&quot;FIXED&quot;} Values not equal for entry: &apos;height&apos;, expected &apos;0.15&apos; but was &apos;15.0&apos;">
         <![CDATA[
@@ -96,8 +96,8 @@ Caused by: java.lang.IllegalArgumentException: Number of JSON entries not equal 
 	at com.consol.citrus.DefaultTestCase.executeAction(DefaultTestCase.java:136)
 	at com.consol.citrus.DefaultTestCaseRunner.run(DefaultTestCaseRunner.java:125)
 	at com.consol.citrus.TestActionRunner.$(TestActionRunner.java:35)
-	at autotests.DuckPropertiesTest.validateResponse(DuckPropertiesTest.java:97)
-	at autotests.DuckPropertiesTest.propertiesNotEvenId(DuckPropertiesTest.java:65)
+	at autotests.tests.DuckPropertiesTest.validateResponse(DuckPropertiesTest.java:97)
+	at autotests.tests.DuckPropertiesTest.propertiesNotEvenId(DuckPropertiesTest.java:65)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

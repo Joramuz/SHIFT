@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="autotests.DuckCreateTest" time="0.0" tests="2" errors="0" skipped="0" failures="2">
-    <testcase name="DuckCreateTest.createMaterialRubber" classname="autotests.DuckCreateTest" time="0.0">
+<testsuite name="autotests.tests.DuckCreateTest" time="0.0" tests="2" errors="0" skipped="0" failures="2">
+    <testcase name="DuckCreateTest.createMaterialRubber" classname="autotests.tests.DuckCreateTest" time="0.0">
       <failure type="com.consol.citrus.exceptions.ValidationException" message="Failed to validate JSON text:
 {&quot;id&quot;:103,&quot;color&quot;:&quot;yellow&quot;,&quot;height&quot;:0.15,&quot;material&quot;:&quot;rubber&quot;,&quot;sound&quot;:&quot;quack&quot;,&quot;wingsState&quot;:&quot;ACTIVE&quot;} Number of JSON entries not equal for element: &apos;$.&apos;, expected &apos;5&apos; but was &apos;6&apos;">
         <![CDATA[
@@ -15,8 +15,8 @@
 	at com.consol.citrus.DefaultTestCase.executeAction(DefaultTestCase.java:136)
 	at com.consol.citrus.DefaultTestCaseRunner.run(DefaultTestCaseRunner.java:125)
 	at com.consol.citrus.TestActionRunner.$(TestActionRunner.java:35)
-	at autotests.DuckCreateTest.validateResponse(DuckCreateTest.java:52)
-	at autotests.DuckCreateTest.createMaterialRubber(DuckCreateTest.java:23)
+	at autotests.tests.DuckCreateTest.validateResponse(DuckCreateTest.java:52)
+	at autotests.tests.DuckCreateTest.createMaterialRubber(DuckCreateTest.java:23)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -81,7 +81,7 @@ Caused by: java.lang.IllegalArgumentException: Number of JSON entries not equal 
         ]]>
       </failure>
     </testcase>
-    <testcase name="DuckCreateTest.createMaterialWood" classname="autotests.DuckCreateTest" time="0.0">
+    <testcase name="DuckCreateTest.createMaterialWood" classname="autotests.tests.DuckCreateTest" time="0.0">
       <failure type="com.consol.citrus.exceptions.ValidationException" message="Failed to validate JSON text:
 {&quot;id&quot;:104,&quot;color&quot;:&quot;yellow&quot;,&quot;height&quot;:0.15,&quot;material&quot;:&quot;wood&quot;,&quot;sound&quot;:&quot;quack&quot;,&quot;wingsState&quot;:&quot;FIXED&quot;} Number of JSON entries not equal for element: &apos;$.&apos;, expected &apos;5&apos; but was &apos;6&apos;">
         <![CDATA[
@@ -96,8 +96,8 @@ Caused by: java.lang.IllegalArgumentException: Number of JSON entries not equal 
 	at com.consol.citrus.DefaultTestCase.executeAction(DefaultTestCase.java:136)
 	at com.consol.citrus.DefaultTestCaseRunner.run(DefaultTestCaseRunner.java:125)
 	at com.consol.citrus.TestActionRunner.$(TestActionRunner.java:35)
-	at autotests.DuckCreateTest.validateResponse(DuckCreateTest.java:52)
-	at autotests.DuckCreateTest.createMaterialWood(DuckCreateTest.java:38)
+	at autotests.tests.DuckCreateTest.validateResponse(DuckCreateTest.java:52)
+	at autotests.tests.DuckCreateTest.createMaterialWood(DuckCreateTest.java:38)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

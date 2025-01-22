@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="autotests.tests.DuckSwimTest" time="0.0" tests="2" errors="0" skipped="0" failures="2">
-    <testcase name="DuckSwimTest.swimExistingDuck" classname="autotests.tests.DuckSwimTest" time="0.0">
-      <failure type="com.consol.citrus.exceptions.ValidationException" message="Validation failed: Values not equal for header element &apos;citrus_http_reason_phrase&apos;, expected &apos;OK&apos; but was &apos;NOT_FOUND&apos;">
+<testsuite name="autotests.tests.DuckCreateTest" time="0.0" tests="2" errors="0" skipped="0" failures="2">
+    <testcase name="DuckCreateTest.createMaterialRubber" classname="autotests.tests.DuckCreateTest" time="0.0">
+      <failure type="com.consol.citrus.exceptions.ValidationException" message="Failed to validate JSON text:
+{&quot;id&quot;:174,&quot;color&quot;:&quot;yellow&quot;,&quot;height&quot;:0.15,&quot;material&quot;:&quot;rubber&quot;,&quot;sound&quot;:&quot;quack&quot;,&quot;wingsState&quot;:&quot;ACTIVE&quot;} Number of JSON entries not equal for element: &apos;$.&apos;, expected &apos;5&apos; but was &apos;6&apos;">
         <![CDATA[
-        com.consol.citrus.exceptions.ValidationException: Validation failed: Values not equal for header element 'citrus_http_reason_phrase', expected 'OK' but was 'NOT_FOUND'
-	at com.consol.citrus.validation.DefaultHeaderValidator.validateHeader(DefaultHeaderValidator.java:79)
-	at com.consol.citrus.validation.DefaultMessageHeaderValidator.validateMessage(DefaultMessageHeaderValidator.java:101)
-	at com.consol.citrus.validation.DefaultMessageHeaderValidator.validateMessage(DefaultMessageHeaderValidator.java:44)
+        com.consol.citrus.exceptions.ValidationException: Failed to validate JSON text:
+{"id":174,"color":"yellow","height":0.15,"material":"rubber","sound":"quack","wingsState":"ACTIVE"} Number of JSON entries not equal for element: '$.', expected '5' but was '6'
+	at com.consol.citrus.validation.json.JsonTextMessageValidator.validateMessage(JsonTextMessageValidator.java:114)
+	at com.consol.citrus.validation.json.JsonTextMessageValidator.validateMessage(JsonTextMessageValidator.java:58)
 	at com.consol.citrus.validation.AbstractMessageValidator.validateMessage(AbstractMessageValidator.java:46)
 	at com.consol.citrus.actions.ReceiveMessageAction.validateMessage(ReceiveMessageAction.java:279)
 	at com.consol.citrus.actions.ReceiveMessageAction.doExecute(ReceiveMessageAction.java:168)
@@ -14,8 +15,8 @@
 	at com.consol.citrus.DefaultTestCase.executeAction(DefaultTestCase.java:136)
 	at com.consol.citrus.DefaultTestCaseRunner.run(DefaultTestCaseRunner.java:125)
 	at com.consol.citrus.TestActionRunner.$(TestActionRunner.java:35)
-	at autotests.tests.DuckSwimTest.validateResponse(DuckSwimTest.java:54)
-	at autotests.tests.DuckSwimTest.swimExistingDuck(DuckSwimTest.java:27)
+	at autotests.clients.DuckActionsClient.validateResponse(DuckActionsClient.java:43)
+	at autotests.tests.DuckCreateTest.createMaterialRubber(DuckCreateTest.java:19)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -71,21 +72,23 @@
 	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:66)
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
-Caused by: java.lang.IllegalArgumentException: Values not equal for header element 'citrus_http_reason_phrase', expected 'OK' but was 'NOT_FOUND'
+Caused by: java.lang.IllegalArgumentException: Number of JSON entries not equal for element: '$.', expected '5' but was '6'
 	at org.springframework.util.Assert.isTrue(Assert.java:121)
-	at com.consol.citrus.validation.DefaultHeaderValidator.validateHeader(DefaultHeaderValidator.java:66)
-	... 66 more
+	at com.consol.citrus.validation.json.JsonTextMessageValidator.validateJson(JsonTextMessageValidator.java:145)
+	at com.consol.citrus.validation.json.JsonTextMessageValidator.validateMessage(JsonTextMessageValidator.java:102)
+	... 65 more
 
         ]]>
       </failure>
     </testcase>
-    <testcase name="DuckSwimTest.swimNonexistentDuck" classname="autotests.tests.DuckSwimTest" time="0.0">
-      <failure type="com.consol.citrus.exceptions.ValidationException" message="Validation failed: Values not equal for header element &apos;citrus_http_reason_phrase&apos;, expected &apos;BAD_REQUEST&apos; but was &apos;NOT_FOUND&apos;">
+    <testcase name="DuckCreateTest.createMaterialWood" classname="autotests.tests.DuckCreateTest" time="0.0">
+      <failure type="com.consol.citrus.exceptions.ValidationException" message="Failed to validate JSON text:
+{&quot;id&quot;:175,&quot;color&quot;:&quot;yellow&quot;,&quot;height&quot;:0.15,&quot;material&quot;:&quot;wood&quot;,&quot;sound&quot;:&quot;quack&quot;,&quot;wingsState&quot;:&quot;FIXED&quot;} Number of JSON entries not equal for element: &apos;$.&apos;, expected &apos;5&apos; but was &apos;6&apos;">
         <![CDATA[
-        com.consol.citrus.exceptions.ValidationException: Validation failed: Values not equal for header element 'citrus_http_reason_phrase', expected 'BAD_REQUEST' but was 'NOT_FOUND'
-	at com.consol.citrus.validation.DefaultHeaderValidator.validateHeader(DefaultHeaderValidator.java:79)
-	at com.consol.citrus.validation.DefaultMessageHeaderValidator.validateMessage(DefaultMessageHeaderValidator.java:101)
-	at com.consol.citrus.validation.DefaultMessageHeaderValidator.validateMessage(DefaultMessageHeaderValidator.java:44)
+        com.consol.citrus.exceptions.ValidationException: Failed to validate JSON text:
+{"id":175,"color":"yellow","height":0.15,"material":"wood","sound":"quack","wingsState":"FIXED"} Number of JSON entries not equal for element: '$.', expected '5' but was '6'
+	at com.consol.citrus.validation.json.JsonTextMessageValidator.validateMessage(JsonTextMessageValidator.java:114)
+	at com.consol.citrus.validation.json.JsonTextMessageValidator.validateMessage(JsonTextMessageValidator.java:58)
 	at com.consol.citrus.validation.AbstractMessageValidator.validateMessage(AbstractMessageValidator.java:46)
 	at com.consol.citrus.actions.ReceiveMessageAction.validateMessage(ReceiveMessageAction.java:279)
 	at com.consol.citrus.actions.ReceiveMessageAction.doExecute(ReceiveMessageAction.java:168)
@@ -93,8 +96,8 @@ Caused by: java.lang.IllegalArgumentException: Values not equal for header eleme
 	at com.consol.citrus.DefaultTestCase.executeAction(DefaultTestCase.java:136)
 	at com.consol.citrus.DefaultTestCaseRunner.run(DefaultTestCaseRunner.java:125)
 	at com.consol.citrus.TestActionRunner.$(TestActionRunner.java:35)
-	at autotests.tests.DuckSwimTest.validateResponse(DuckSwimTest.java:54)
-	at autotests.tests.DuckSwimTest.swimNonexistentDuck(DuckSwimTest.java:42)
+	at autotests.clients.DuckActionsClient.validateResponse(DuckActionsClient.java:43)
+	at autotests.tests.DuckCreateTest.createMaterialWood(DuckCreateTest.java:34)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -150,10 +153,11 @@ Caused by: java.lang.IllegalArgumentException: Values not equal for header eleme
 	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:66)
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
-Caused by: java.lang.IllegalArgumentException: Values not equal for header element 'citrus_http_reason_phrase', expected 'BAD_REQUEST' but was 'NOT_FOUND'
+Caused by: java.lang.IllegalArgumentException: Number of JSON entries not equal for element: '$.', expected '5' but was '6'
 	at org.springframework.util.Assert.isTrue(Assert.java:121)
-	at com.consol.citrus.validation.DefaultHeaderValidator.validateHeader(DefaultHeaderValidator.java:66)
-	... 66 more
+	at com.consol.citrus.validation.json.JsonTextMessageValidator.validateJson(JsonTextMessageValidator.java:145)
+	at com.consol.citrus.validation.json.JsonTextMessageValidator.validateMessage(JsonTextMessageValidator.java:102)
+	... 65 more
 
         ]]>
       </failure>

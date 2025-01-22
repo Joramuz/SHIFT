@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="autotests.DuckUpdateTest" time="0.0" tests="2" errors="0" skipped="0" failures="1">
-    <testcase name="DuckUpdateTest.updateColorAndHeightDuck" classname="autotests.DuckUpdateTest" time="0.0"/>
-    <testcase name="DuckUpdateTest.updateColorAndSoundDuck" classname="autotests.DuckUpdateTest" time="0.0">
+<testsuite name="autotests.tests.DuckUpdateTest" time="0.0" tests="2" errors="0" skipped="0" failures="1">
+    <testcase name="DuckUpdateTest.updateColorAndHeightDuck" classname="autotests.tests.DuckUpdateTest" time="0.0"/>
+    <testcase name="DuckUpdateTest.updateColorAndSoundDuck" classname="autotests.tests.DuckUpdateTest" time="0.0">
       <failure type="com.consol.citrus.exceptions.ValidationException" message="Validation failed: Values not equal for header element &apos;citrus_http_reason_phrase&apos;, expected &apos;BAD_REQUEST&apos; but was &apos;OK&apos;">
         <![CDATA[
         com.consol.citrus.exceptions.ValidationException: Validation failed: Values not equal for header element 'citrus_http_reason_phrase', expected 'BAD_REQUEST' but was 'OK'
@@ -15,8 +15,8 @@
 	at com.consol.citrus.DefaultTestCase.executeAction(DefaultTestCase.java:136)
 	at com.consol.citrus.DefaultTestCaseRunner.run(DefaultTestCaseRunner.java:125)
 	at com.consol.citrus.TestActionRunner.$(TestActionRunner.java:35)
-	at autotests.DuckUpdateTest.validateResponse(DuckUpdateTest.java:66)
-	at autotests.DuckUpdateTest.updateColorAndSoundDuck(DuckUpdateTest.java:49)
+	at autotests.tests.DuckUpdateTest.validateResponse(DuckUpdateTest.java:66)
+	at autotests.tests.DuckUpdateTest.updateColorAndSoundDuck(DuckUpdateTest.java:49)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
