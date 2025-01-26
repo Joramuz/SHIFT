@@ -10,6 +10,7 @@ repositories {
 }
 
 dependencies {
+    testImplementation 'org.hamcrest:hamcrest:2.2'
     testImplementation group: 'com.consol.citrus', name: 'citrus-base', version: '3.4.0'
     testImplementation group: 'com.consol.citrus', name: 'citrus-testng', version: '3.4.0'
     testImplementation group: 'com.consol.citrus', name: 'citrus-spring', version: '3.4.0'

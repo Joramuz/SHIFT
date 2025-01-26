@@ -16,24 +16,18 @@ import static com.consol.citrus.dsl.MessageSupport.MessageBodySupport.fromBody;
 import static com.consol.citrus.http.actions.HttpActionBuilder.http;
 
 public class DuckPropertiesTest extends TestNGCitrusSpringSupport {
-
     @Test(description = " ID - целое четное число. Материал wood ")
     @CitrusTest
     public void propertiesEvenId(@Optional @CitrusResource TestCaseRunner runner) {
-
         AtomicInteger id = new AtomicInteger();
-
-        while (true) {
+        do {
             createDuck(runner, "yellow", 0.15, "wood", "quack", "FIXED");
             extractor(runner);
             runner.$(a -> {
                 id.set(Integer.parseInt(a.getVariable("duckId")));
             });
 
-            if (id.get() % 2 == 0)
-                break;
-        }
-
+        } while (id.get() % 2 != 0);
         duckProperties(runner, "${duckId}");
         validateResponse(runner, "{\n"
                 + "  \"color\": \"" + "yellow" + "\",\n"
@@ -44,23 +38,19 @@ public class DuckPropertiesTest extends TestNGCitrusSpringSupport {
                 + "\"\n" + "}", HttpStatus.OK);
         delete(runner, "${duckId}");
     }
+
     @Test(description = "ID - целое нечетное число. Материал rubber ")
     @CitrusTest
     public void propertiesNotEvenId(@Optional @CitrusResource TestCaseRunner runner) {
-
         AtomicInteger id = new AtomicInteger();
-
-        while (true) {
+        do {
             createDuck(runner, "yellow", 0.15, "rubber", "quack", "FIXED");
             extractor(runner);
             runner.$(a -> {
                 id.set(Integer.parseInt(a.getVariable("duckId")));
             });
 
-            if (id.get() % 2 == 1)
-                break;
-        }
-
+        } while (id.get() % 2 != 1);
         duckProperties(runner, "${duckId}");
         validateResponse(runner, "{\n"
                 + "  \"color\": \"" + "yellow" + "\",\n"
@@ -72,16 +62,13 @@ public class DuckPropertiesTest extends TestNGCitrusSpringSupport {
         delete(runner,"${duckId}" );
     }
 
-
     public static void extractor(TestCaseRunner runner) {
         runner.$(http().client("http://localhost:2222")
                 .receive()
                 .response(HttpStatus.OK)
                 .message()
                 .extract(fromBody().expression("$.id", "duckId")));
-
     }
-
 
     public void duckProperties(TestCaseRunner runner, String id) {
         runner.$(http().client("http://localhost:2222")
@@ -90,7 +77,6 @@ public class DuckPropertiesTest extends TestNGCitrusSpringSupport {
                 .queryParam("id", id));
     }
 
-
     public void validateResponse(TestCaseRunner runner, String responseMessage, HttpStatus httpStatus) {
         runner.$(http().client("http://localhost:2222")
                 .receive()
@@ -98,7 +84,6 @@ public class DuckPropertiesTest extends TestNGCitrusSpringSupport {
                 .message()
                 .contentType(MediaType.APPLICATION_JSON_VALUE).body(responseMessage));
     }
-
 
     public void createDuck(TestCaseRunner runner, String color, double height, String material, String sound, String wingsState) {
         runner.$(http().client("http://localhost:2222")

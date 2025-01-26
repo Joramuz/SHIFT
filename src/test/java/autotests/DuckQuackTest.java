@@ -16,50 +16,37 @@ import static com.consol.citrus.dsl.MessageSupport.MessageBodySupport.fromBody;
 import static com.consol.citrus.http.actions.HttpActionBuilder.http;
 
 public class DuckQuackTest extends TestNGCitrusSpringSupport {
-
     @Test(description = "Корректный чётный id , корректный звук ")
     @CitrusTest
     public void quackEvenId(@Optional @CitrusResource TestCaseRunner runner) {
-
         AtomicInteger id = new AtomicInteger();
-
-        while (true) {
+        do {
             createDuck(runner, "yellow", 0.15, "rubber", "quack", "FIXED");
             extractor(runner);
             runner.$(a -> {
                 id.set(Integer.parseInt(a.getVariable("duckId")));
             });
-
-            if (id.get() % 2 == 0)
-                break;
-        }
-
+        } while (id.get() % 2 != 0);
         duckQuack(runner, "${duckId}","1","2");
         validateResponse(runner, "{\n" + "  \"sound\": \"quack-quack\"\n" + "}", HttpStatus.OK);
         delete(runner, "${duckId}");
     }
+
     @Test(description = "Корректный нечётный id, корректный звук ")
     @CitrusTest
     public void quackNotEvenId(@Optional @CitrusResource TestCaseRunner runner) {
-
         AtomicInteger id = new AtomicInteger();
-
-        while (true) {
+        do {
             createDuck(runner, "yellow", 0.15, "rubber", "quack", "FIXED");
             extractor(runner);
             runner.$(a -> {
                 id.set(Integer.parseInt(a.getVariable("duckId")));
             });
-
-            if (id.get() % 2 == 1)
-                break;
-        }
-
+        } while (id.get() % 2 != 1);
         duckQuack(runner, "${duckId}","1","1");
         validateResponse(runner, "{\n" + "  \"sound\": \"quack\"\n" + "}", HttpStatus.OK);
         delete(runner,"${duckId}" );
     }
-
 
     public static void extractor(TestCaseRunner runner) {
         runner.$(http().client("http://localhost:2222")
@@ -67,9 +54,7 @@ public class DuckQuackTest extends TestNGCitrusSpringSupport {
                 .response(HttpStatus.OK)
                 .message()
                 .extract(fromBody().expression("$.id", "duckId")));
-
     }
-
 
     public void duckQuack(TestCaseRunner runner, String id,String repetitionCount, String soundCount) {
         runner.$(http().client("http://localhost:2222")
@@ -80,7 +65,6 @@ public class DuckQuackTest extends TestNGCitrusSpringSupport {
                 .queryParam("soundCount",soundCount));
     }
 
-
     public void validateResponse(TestCaseRunner runner, String responseMessage, HttpStatus httpStatus) {
         runner.$(http().client("http://localhost:2222")
                 .receive()
@@ -88,7 +72,6 @@ public class DuckQuackTest extends TestNGCitrusSpringSupport {
                 .message()
                 .contentType(MediaType.APPLICATION_JSON_VALUE).body(responseMessage));
     }
-
 
     public void createDuck(TestCaseRunner runner, String color, double height, String material, String sound, String wingsState) {
         runner.$(http().client("http://localhost:2222")
