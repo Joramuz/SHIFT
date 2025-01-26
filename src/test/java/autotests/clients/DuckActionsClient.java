@@ -20,16 +20,13 @@ public class DuckActionsClient extends TestNGCitrusSpringSupport {
     @Autowired
     protected HttpClient yellowDuckService;
 
-
     public void extractor(TestCaseRunner runner) {
         runner.$(http().client(yellowDuckService)
                 .receive()
                 .response(HttpStatus.OK)
                 .message()
                 .extract(fromBody().expression("$.id", "duckId")));
-
     }
-
 
     public void duckProperties(TestCaseRunner runner, String id) {
         runner.$(http().client(yellowDuckService)
@@ -37,7 +34,6 @@ public class DuckActionsClient extends TestNGCitrusSpringSupport {
                 .get("/api/duck/action/properties")
                 .queryParam("id", id));
     }
-
 
     public void validateResponse(TestCaseRunner runner, String responseMessage, HttpStatus httpStatus) {
         runner.$(http().client(yellowDuckService)
@@ -47,6 +43,14 @@ public class DuckActionsClient extends TestNGCitrusSpringSupport {
                 .contentType(MediaType.APPLICATION_JSON_VALUE).body(responseMessage));
     }
 
+    public void validateResponseWithExtractId(TestCaseRunner runner, String responseMessage, HttpStatus httpStatus) {
+        runner.$(http().client("http://localhost:2222")
+                .receive()
+                .response(httpStatus)
+                .message()
+                .extract(fromBody().expression("$.id", "duckId"))
+                .contentType(MediaType.APPLICATION_JSON_VALUE).body(responseMessage));
+    }
 
     public void createDuck(TestCaseRunner runner, String color, double height, String material, String sound, String wingsState) {
         runner.$(http().client(yellowDuckService)
@@ -101,6 +105,26 @@ public class DuckActionsClient extends TestNGCitrusSpringSupport {
                 .queryParam("id", id)
                 .queryParam("material", material)
                 .queryParam("sound", sound));
-
     }
+
+    public static String extractAllIds(TestCaseRunner runner) {
+        final String[] ducksIds = {""};
+        getAllIds(runner);
+        runner.$(http().client("http://localhost:2222")
+                .receive()
+                .response(HttpStatus.OK)
+                .message()
+                .extract(fromBody().expression("$", "body")));
+        runner.$(a -> {
+            ducksIds[0] = (a.getVariable("body"));
+        });
+        return ducksIds[0];
+    }
+
+    static public void getAllIds(TestCaseRunner runner) {
+        runner.$(http().client("http://localhost:2222")
+                .send()
+                .get("/api/duck/getAllIds"));
+    }
+
 }
