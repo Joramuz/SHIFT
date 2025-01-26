@@ -1,5 +1,7 @@
 package autotests.tests;
 
+import autotests.payloads.DuckCreate;
+import autotests.payloads.WingsState;
 import com.consol.citrus.TestCaseRunner;
 import com.consol.citrus.annotations.CitrusResource;
 import com.consol.citrus.annotations.CitrusTest;
@@ -17,21 +19,16 @@ public class DuckPropertiesTest extends DuckActionsClient {
     @CitrusTest
     public void propertiesEvenId(@Optional @CitrusResource TestCaseRunner runner) {
         AtomicInteger id = new AtomicInteger();
+        DuckCreate duck = new DuckCreate().color("yellow").height(0.15).material("wood").sound("quack").wingsState(WingsState.FIXED);
         do {
-            createDuck(runner, "yellow", 0.15, "wood", "quack", "FIXED");
+            createDuck(runner, duck);
             extractor(runner);
             runner.$(a -> {
                 id.set(Integer.parseInt(a.getVariable("duckId")));
             });
         } while (id.get() % 2 != 0);
         duckProperties(runner, "${duckId}");
-        validateResponse(runner, "{\n"
-                + "  \"color\": \"" + "yellow" + "\",\n"
-                + "  \"height\": " + 0.15 + ",\n"
-                + "  \"material\": \"" + "rubber" + "\",\n"
-                + "  \"sound\": \"" + "quack" + "\",\n"
-                + "  \"wingsState\": \"" + "FIXED"
-                + "\"\n" + "}", HttpStatus.OK);
+        validateResponse(runner, duck, HttpStatus.OK);
         delete(runner, "${duckId}");
     }
 
@@ -39,8 +36,9 @@ public class DuckPropertiesTest extends DuckActionsClient {
     @CitrusTest
     public void propertiesNotEvenId(@Optional @CitrusResource TestCaseRunner runner) {
         AtomicInteger id = new AtomicInteger();
+        DuckCreate duck = new DuckCreate().color("yellow").height(0.15).material("rubber").sound("quack").wingsState(WingsState.FIXED);
         do {
-            createDuck(runner, "yellow", 0.15, "rubber", "quack", "FIXED");
+            createDuck(runner, duck);
             extractor(runner);
             runner.$(a -> {
                 id.set(Integer.parseInt(a.getVariable("duckId")));
@@ -54,7 +52,7 @@ public class DuckPropertiesTest extends DuckActionsClient {
                 + "  \"sound\": \"" + "quack" + "\",\n"
                 + "  \"wingsState\": \"" + "FIXED"
                 + "\"\n" + "}", HttpStatus.OK);
-        delete(runner,"${duckId}" );
+        delete(runner, "${duckId}");
     }
 
 }

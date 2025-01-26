@@ -1,6 +1,9 @@
 package autotests.tests;
 
 import autotests.clients.DuckActionsClient;
+import autotests.payloads.DuckCreate;
+import autotests.payloads.DuckFly;
+import autotests.payloads.WingsState;
 import com.consol.citrus.TestCaseRunner;
 import com.consol.citrus.annotations.CitrusResource;
 import com.consol.citrus.annotations.CitrusTest;
@@ -15,27 +18,31 @@ public class DuckFlyTest extends DuckActionsClient {
     @Test(description = "Существующий id с активными крыльями ")
     @CitrusTest
     public void flyActiveWings(@Optional @CitrusResource TestCaseRunner runner) {
-        createDuck(runner, "yellow", 0.15, "rubber", "quack", "ACTIVE");
+        DuckCreate duck = new DuckCreate().color("yellow").height(0.15).material("rubber").sound("quack").wingsState(WingsState.ACTIVE);
+        createDuck(runner, duck);
         extractor(runner);
+        DuckFly fly = new DuckFly().message("I am flying :)");
         duckFly(runner, "${duckId}");
-        validateResponse(runner, "{\n" + "  \"message\": \"I am flying :)\"\n" + "}", HttpStatus.OK);
+        validateResponse(runner, fly, HttpStatus.OK);
         delete(runner, "${duckId}");
     }
 
     @Test(description = "Существующий id со связанными крыльями")
     @CitrusTest
     public void flyFixedWings(@Optional @CitrusResource TestCaseRunner runner) {
-        createDuck(runner, "yellow", 0.15, "rubber", "quack", "FIXED");
+        DuckCreate duck = new DuckCreate().color("yellow").height(0.15).material("rubber").sound("quack").wingsState(WingsState.FIXED);
+        createDuck(runner, duck);
         extractor(runner);
         duckFly(runner, "${duckId}");
-        validateResponse(runner, "{\n" + "  \"message\": \"I can not fly :C\"\n" + "}", HttpStatus.OK);
+        validateResponseJson(runner, "duckFlyTest/fixedWingsTest.json", HttpStatus.OK);
         delete(runner, "${duckId}");
     }
 
     @Test(description = "Существующий id с крыльями в неопределенном состоянии ")
     @CitrusTest
     public void flyUndefinedWings(@Optional @CitrusResource TestCaseRunner runner) {
-        createDuck(runner, "yellow", 0.15, "rubber", "quack", "UNDEFINED");
+        DuckCreate duck = new DuckCreate().color("yellow").height(0.15).material("rubber").sound("quack").wingsState(WingsState.UNDEFINED);
+        createDuck(runner, duck);
         extractor(runner);
         duckFly(runner, "${duckId}");
         validateResponse(runner, "{\n" + "  \"message\": \"Wings are not detected :(\"\n" + "}", HttpStatus.OK);

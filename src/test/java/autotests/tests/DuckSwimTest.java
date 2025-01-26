@@ -1,6 +1,9 @@
 package autotests.tests;
 
 import autotests.clients.DuckActionsClient;
+import autotests.payloads.DuckCreate;
+import autotests.payloads.DuckSwim;
+import autotests.payloads.WingsState;
 import com.consol.citrus.TestCaseRunner;
 import com.consol.citrus.annotations.CitrusResource;
 import com.consol.citrus.annotations.CitrusTest;
@@ -13,17 +16,20 @@ public class DuckSwimTest extends DuckActionsClient {
     @Test(description = " утка с существующим id плавает")
     @CitrusTest
     public void swimExistingDuck(@Optional @CitrusResource TestCaseRunner runner) {
-        createDuck(runner, "yellow", 0.15, "rubber", "quack", "FIXED");
+        DuckCreate duck = new DuckCreate().color("yellow").height(0.15).material("rubber").sound("quack").wingsState(WingsState.ACTIVE);
+        createDuck(runner, duck);
         extractor(runner);
+        DuckSwim swim = new DuckSwim().message("I'm swimming");
         duckSwim(runner, "${duckId}");
-        validateResponse(runner, "{\n" + "  \"message\": \"I'm swimming\"\n" + "}", HttpStatus.OK);
+        validateResponse(runner, swim, HttpStatus.OK);
         delete(runner, "${duckId}");
     }
 
     @Test(description = " утка с несуществующим id плавает")
     @CitrusTest
     public void swimNonexistentDuck(@Optional @CitrusResource TestCaseRunner runner) {
-        createDuck(runner, "yellow", 0.15, "rubber", "quack", "FIXED");
+        DuckCreate duck = new DuckCreate().color("yellow").height(0.15).material("rubber").sound("quack").wingsState(WingsState.ACTIVE);
+        createDuck(runner, duck);
         extractor(runner);
         delete(runner, "${duckId}");
         duckSwim(runner, "${duckId}");
