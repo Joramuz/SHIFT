@@ -8,16 +8,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.core.io.ClassPathResource;
 import com.consol.citrus.http.client.HttpClient;
-
-
 import com.consol.citrus.message.builder.ObjectMappingPayloadBuilder;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
-
-
 import static com.consol.citrus.dsl.MessageSupport.MessageBodySupport.fromBody;
 import static com.consol.citrus.http.actions.HttpActionBuilder.http;
 
@@ -179,5 +173,4 @@ public class DuckActionsClient extends TestNGCitrusSpringSupport {
                 .send()
                 .get("/api/duck/getAllIds"));
     }
-
 }

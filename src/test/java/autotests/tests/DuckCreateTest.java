@@ -10,7 +10,6 @@ import org.springframework.http.HttpStatus;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Test;
 
-
 public class DuckCreateTest extends DuckActionsClient {
 
     @Test(description = "Создание утки с material = rubber ")
@@ -32,5 +31,4 @@ public class DuckCreateTest extends DuckActionsClient {
         duckProperties(runner, "${duckId}");
         validateResponse(runner, duck, HttpStatus.OK);
     }
-
 }

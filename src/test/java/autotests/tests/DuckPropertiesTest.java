@@ -12,7 +12,6 @@ import autotests.clients.DuckActionsClient;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-
 public class DuckPropertiesTest extends DuckActionsClient {
 
     @Test(description = " ID - целое четное число. Материал wood ")
@@ -54,5 +53,4 @@ public class DuckPropertiesTest extends DuckActionsClient {
                 + "\"\n" + "}", HttpStatus.OK);
         delete(runner, "${duckId}");
     }
-
 }

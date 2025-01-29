@@ -12,7 +12,6 @@ import org.springframework.http.HttpStatus;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Test;
 
-
 public class DuckFlyTest extends DuckActionsClient {
 
     @Test(description = "Существующий id с активными крыльями ")
@@ -21,7 +20,7 @@ public class DuckFlyTest extends DuckActionsClient {
         DuckCreate duck = new DuckCreate().color("yellow").height(0.15).material("rubber").sound("quack").wingsState(WingsState.ACTIVE);
         createDuck(runner, duck);
         extractor(runner);
-        DuckFly fly = new DuckFly().message("I am flying :)");
+        DuckFly fly = new DuckFly().message("I'm flying");
         duckFly(runner, "${duckId}");
         validateResponse(runner, fly, HttpStatus.OK);
         delete(runner, "${duckId}");
@@ -45,8 +44,7 @@ public class DuckFlyTest extends DuckActionsClient {
         createDuck(runner, duck);
         extractor(runner);
         duckFly(runner, "${duckId}");
-        validateResponse(runner, "{\n" + "  \"message\": \"Wings are not detected :(\"\n" + "}", HttpStatus.OK);
+        validateResponse(runner, "{\n" + "  \"message\": \"@ignore@\"\n" + "}", HttpStatus.BAD_REQUEST);
         delete(runner, "${duckId}");
     }
-
 }

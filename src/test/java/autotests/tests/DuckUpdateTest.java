@@ -13,7 +13,6 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-
 public class DuckUpdateTest extends DuckActionsClient {
 
     @Test(description = "меняем цвет и высоту утки ")
@@ -53,5 +52,4 @@ public class DuckUpdateTest extends DuckActionsClient {
                 + "\"\n" + "}", HttpStatus.OK);
         delete(runner, "${duckId}");
     }
-
 }

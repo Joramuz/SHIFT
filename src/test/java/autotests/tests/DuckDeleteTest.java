@@ -9,7 +9,6 @@ import org.springframework.http.HttpStatus;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Test;
 import autotests.clients.DuckActionsClient;
-
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class DuckDeleteTest extends DuckActionsClient {

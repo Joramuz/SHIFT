@@ -50,5 +50,4 @@ public class DuckQuackTest extends DuckActionsClient {
         validateResponse(runner, quack, HttpStatus.OK);
         delete(runner, "${duckId}");
     }
-
 }
