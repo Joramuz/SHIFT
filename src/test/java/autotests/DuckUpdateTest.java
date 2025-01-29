@@ -15,7 +15,7 @@ import static com.consol.citrus.dsl.MessageSupport.MessageBodySupport.fromBody;
 import static com.consol.citrus.http.actions.HttpActionBuilder.http;
 
 public class DuckUpdateTest extends TestNGCitrusSpringSupport {
-    @Test(description = "Изменяем цвет и высоту утки ")
+    @Test(description = "меняем цвет и высоту утки ")
     @CitrusTest
     public void updateColorAndHeightDuck(@Optional @CitrusResource TestCaseRunner runner) {
         AtomicInteger id = new AtomicInteger();
@@ -37,7 +37,7 @@ public class DuckUpdateTest extends TestNGCitrusSpringSupport {
         delete(runner, "${duckId}");
     }
 
-    @Test(description = "Изменяем цвет и звук утки ")
+    @Test(description = "меняем цвет и звук утки ")
     @CitrusTest
     public void updateColorAndSoundDuck(@Optional @CitrusResource TestCaseRunner runner) {
         createDuck(runner, "yellow", 0.15, "rubber", "quack", "FIXED");
