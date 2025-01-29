@@ -9,7 +9,6 @@ import org.springframework.http.HttpStatus;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Test;
 
-
 public class DuckFlyTest extends DuckActionsClient {
 
     @Test(description = "Существующий id с активными крыльями ")
@@ -41,5 +40,4 @@ public class DuckFlyTest extends DuckActionsClient {
         validateResponse(runner, "{\n" + "  \"message\": \"Wings are not detected :(\"\n" + "}", HttpStatus.OK);
         delete(runner, "${duckId}");
     }
-
 }

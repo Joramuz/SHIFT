@@ -43,5 +43,4 @@ public class DuckQuackTest extends DuckActionsClient {
         validateResponse(runner, "{\n" + "  \"sound\": \"quack\"\n" + "}", HttpStatus.OK);
         delete(runner,"${duckId}" );
     }
-
 }

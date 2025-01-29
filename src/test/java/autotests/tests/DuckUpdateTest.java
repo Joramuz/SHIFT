@@ -9,11 +9,9 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-
-
 public class DuckUpdateTest extends DuckActionsClient {
 
-    @Test(description = "Изменяем цвет и высоту утки ")
+    @Test(description = "меняем цвет и высоту утки ")
     @CitrusTest
     public void updateColorAndHeightDuck(@Optional @CitrusResource TestCaseRunner runner) {
         AtomicInteger id = new AtomicInteger();
@@ -35,7 +33,7 @@ public class DuckUpdateTest extends DuckActionsClient {
         delete(runner, "${duckId}");
     }
 
-    @Test(description = "Изменяем цвет и звук утки ")
+    @Test(description = "меняем цвет и звук утки ")
     @CitrusTest
     public void updateColorAndSoundDuck(@Optional @CitrusResource TestCaseRunner runner) {
         createDuck(runner, "yellow", 0.15, "rubber", "quack", "FIXED");
@@ -52,5 +50,4 @@ public class DuckUpdateTest extends DuckActionsClient {
                 + "\"\n" + "}", HttpStatus.OK);
         delete(runner, "${duckId}");
     }
-
 }

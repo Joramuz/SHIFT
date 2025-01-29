@@ -7,7 +7,6 @@ import org.springframework.http.HttpStatus;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Test;
 
-
 public class DuckCreateTest extends DuckActionsClient {
 
     @Test(description = "Создание утки с material = rubber ")
@@ -51,5 +50,4 @@ public class DuckCreateTest extends DuckActionsClient {
                 + "  \"wingsState\": \"" + "ACTIVE"
                 + "\"\n" + "}", HttpStatus.OK);
     }
-
 }

@@ -7,10 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.beans.factory.annotation.Autowired;
-
-
 import com.consol.citrus.http.client.HttpClient;
-
 import static com.consol.citrus.dsl.MessageSupport.MessageBodySupport.fromBody;
 import static com.consol.citrus.http.actions.HttpActionBuilder.http;
 
@@ -44,7 +41,7 @@ public class DuckActionsClient extends TestNGCitrusSpringSupport {
     }
 
     public void validateResponseWithExtractId(TestCaseRunner runner, String responseMessage, HttpStatus httpStatus) {
-        runner.$(http().client("http://localhost:2222")
+        runner.$(http().client(yellowDuckService)
                 .receive()
                 .response(httpStatus)
                 .message()
@@ -107,10 +104,10 @@ public class DuckActionsClient extends TestNGCitrusSpringSupport {
                 .queryParam("sound", sound));
     }
 
-    public static String extractAllIds(TestCaseRunner runner) {
+    public String extractAllIds(TestCaseRunner runner) {
         final String[] ducksIds = {""};
         getAllIds(runner);
-        runner.$(http().client("http://localhost:2222")
+        runner.$(http().client(yellowDuckService)
                 .receive()
                 .response(HttpStatus.OK)
                 .message()
@@ -121,10 +118,9 @@ public class DuckActionsClient extends TestNGCitrusSpringSupport {
         return ducksIds[0];
     }
 
-    static public void getAllIds(TestCaseRunner runner) {
-        runner.$(http().client("http://localhost:2222")
+    public void getAllIds(TestCaseRunner runner) {
+        runner.$(http().client(yellowDuckService)
                 .send()
                 .get("/api/duck/getAllIds"));
     }
-
 }

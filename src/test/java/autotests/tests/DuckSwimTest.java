@@ -23,11 +23,7 @@ public class DuckSwimTest extends DuckActionsClient {
     @Test(description = " утка с несуществующим id плавает")
     @CitrusTest
     public void swimNonexistentDuck(@Optional @CitrusResource TestCaseRunner runner) {
-        createDuck(runner, "yellow", 0.15, "rubber", "quack", "FIXED");
-        extractor(runner);
-        delete(runner, "${duckId}");
-        duckSwim(runner, "${duckId}");
+        duckSwim(runner, "0");
         validateResponse(runner, "{\n" + "  \"message\": \"@ignore@\"\n" + "}", HttpStatus.BAD_REQUEST);
     }
-
 }
