@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class autotests.tests.duckController.DuckCreateTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class autotests.tests.duckController.DuckCreateTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/autotests.tests.duckController.html">autotests.tests.duckController</a> &gt; DuckCreateTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">2</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">2</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.704s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox failures" id="successRate">
+<div class="percent">0%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Failed tests</a>
+</li>
+<li>
+<a href="#tab1">Tests</a>
+</li>
+<li>
+<a href="#tab2">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Failed tests</h2>
+<div class="test">
+<a name="createMaterialRubber[0](null)"></a>
+<h3 class="failures">createMaterialRubber[0](null)</h3>
+<span class="code">
+<pre>com.consol.citrus.exceptions.TestCaseFailedException: Failed to validate JSON text:
+{&quot;id&quot;:157,&quot;color&quot;:&quot;yellow&quot;,&quot;height&quot;:0.15,&quot;material&quot;:&quot;rubber&quot;,&quot;sound&quot;:&quot;quack&quot;,&quot;wingsState&quot;:&quot;ACTIVE&quot;} Number of JSON entries not equal for element: '$.', expected '5' but was '6'
+	at app//com.consol.citrus.DefaultTestCase.executeAction(DefaultTestCase.java:143)
+	at app//com.consol.citrus.DefaultTestCaseRunner.run(DefaultTestCaseRunner.java:125)
+	at app//com.consol.citrus.TestActionRunner.$(TestActionRunner.java:35)
+	at app//autotests.clients.DuckActionsClient.validateResponseWithExtractId(DuckActionsClient.java:88)
+	at app//autotests.tests.duckController.DuckCreateTest.createMaterialRubber(DuckCreateTest.java:31)
+	at java.base@11.0.3/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@11.0.3/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base@11.0.3/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@11.0.3/java.lang.reflect.Method.invoke(Method.java:566)
+	at app//org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:282)
+	at app//com.consol.citrus.testng.TestNGHelper.lambda$invokeTestMethod$1(TestNGHelper.java:82)
+	at app//com.consol.citrus.common.DefaultTestLoader.lambda$doLoad$1(DefaultTestLoader.java:116)
+	at java.base@11.0.3/java.util.ArrayList.forEach(ArrayList.java:1540)
+	at app//com.consol.citrus.common.DefaultTestLoader.doLoad(DefaultTestLoader.java:116)
+	at app//com.consol.citrus.common.DefaultTestLoader.load(DefaultTestLoader.java:94)
+	at app//com.consol.citrus.testng.TestNGHelper.invokeTestMethod(TestNGHelper.java:83)
+	at app//com.consol.citrus.testng.spring.TestNGCitrusSpringSupport.run(TestNGCitrusSpringSupport.java:185)
+	at app//com.consol.citrus.testng.spring.TestNGCitrusSpringSupport.run(TestNGCitrusSpringSupport.java:101)
+	at app//org.testng.internal.invokers.MethodInvocationHelper.invokeHookable(MethodInvocationHelper.java:272)
+	at app//org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:669)
+	at app//org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at app//org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at app//org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+	at app//org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at app//org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at app//org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base@11.0.3/java.util.ArrayList.forEach(ArrayList.java:1540)
+	at app//org.testng.TestRunner.privateRun(TestRunner.java:829)
+	at app//org.testng.TestRunner.run(TestRunner.java:602)
+	at app//org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+	at app//org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+	at app//org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+	at app//org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at app//org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at app//org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at app//org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at app//org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at app//org.testng.TestNG.runSuites(TestNG.java:1099)
+	at app//org.testng.TestNG.run(TestNG.java:1067)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.runTests(TestNGTestClassProcessor.java:153)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.stop(TestNGTestClassProcessor.java:96)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:62)
+	at java.base@11.0.3/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@11.0.3/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base@11.0.3/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@11.0.3/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at com.sun.proxy.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:119)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:66)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+Caused by: com.consol.citrus.exceptions.ValidationException: Failed to validate JSON text:
+{&quot;id&quot;:157,&quot;color&quot;:&quot;yellow&quot;,&quot;height&quot;:0.15,&quot;material&quot;:&quot;rubber&quot;,&quot;sound&quot;:&quot;quack&quot;,&quot;wingsState&quot;:&quot;ACTIVE&quot;} Number of JSON entries not equal for element: '$.', expected '5' but was '6'
+	at app//com.consol.citrus.validation.json.JsonTextMessageValidator.validateMessage(JsonTextMessageValidator.java:114)
+	at app//com.consol.citrus.validation.json.JsonTextMessageValidator.validateMessage(JsonTextMessageValidator.java:58)
+	at app//com.consol.citrus.validation.AbstractMessageValidator.validateMessage(AbstractMessageValidator.java:46)
+	at app//com.consol.citrus.actions.ReceiveMessageAction.validateMessage(ReceiveMessageAction.java:279)
+	at app//com.consol.citrus.actions.ReceiveMessageAction.doExecute(ReceiveMessageAction.java:168)
+	at app//com.consol.citrus.actions.AbstractTestAction.execute(AbstractTestAction.java:59)
+	at app//com.consol.citrus.DefaultTestCase.executeAction(DefaultTestCase.java:136)
+	... 59 more
+Caused by: java.lang.IllegalArgumentException: Number of JSON entries not equal for element: '$.', expected '5' but was '6'
+	at org.springframework.util.Assert.isTrue(Assert.java:121)
+	at com.consol.citrus.validation.json.JsonTextMessageValidator.validateJson(JsonTextMessageValidator.java:145)
+	at com.consol.citrus.validation.json.JsonTextMessageValidator.validateMessage(JsonTextMessageValidator.java:102)
+	... 65 more
+</pre>
+</span>
+</div>
+<div class="test">
+<a name="createMaterialWood[0](null)"></a>
+<h3 class="failures">createMaterialWood[0](null)</h3>
+<span class="code">
+<pre>com.consol.citrus.exceptions.TestCaseFailedException: Failed to validate JSON text:
+{&quot;id&quot;:158,&quot;color&quot;:&quot;yellow&quot;,&quot;height&quot;:0.15,&quot;material&quot;:&quot;wood&quot;,&quot;sound&quot;:&quot;quack&quot;,&quot;wingsState&quot;:&quot;ACTIVE&quot;} Number of JSON entries not equal for element: '$.', expected '5' but was '6'
+	at app//com.consol.citrus.DefaultTestCase.executeAction(DefaultTestCase.java:143)
+	at app//com.consol.citrus.DefaultTestCaseRunner.run(DefaultTestCaseRunner.java:125)
+	at app//com.consol.citrus.TestActionRunner.$(TestActionRunner.java:35)
+	at app//autotests.clients.DuckActionsClient.validateResponseWithExtractId(DuckActionsClient.java:88)
+	at app//autotests.tests.duckController.DuckCreateTest.createMaterialWood(DuckCreateTest.java:44)
+	at java.base@11.0.3/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@11.0.3/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base@11.0.3/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@11.0.3/java.lang.reflect.Method.invoke(Method.java:566)
+	at app//org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:282)
+	at app//com.consol.citrus.testng.TestNGHelper.lambda$invokeTestMethod$1(TestNGHelper.java:82)
+	at app//com.consol.citrus.common.DefaultTestLoader.lambda$doLoad$1(DefaultTestLoader.java:116)
+	at java.base@11.0.3/java.util.ArrayList.forEach(ArrayList.java:1540)
+	at app//com.consol.citrus.common.DefaultTestLoader.doLoad(DefaultTestLoader.java:116)
+	at app//com.consol.citrus.common.DefaultTestLoader.load(DefaultTestLoader.java:94)
+	at app//com.consol.citrus.testng.TestNGHelper.invokeTestMethod(TestNGHelper.java:83)
+	at app//com.consol.citrus.testng.spring.TestNGCitrusSpringSupport.run(TestNGCitrusSpringSupport.java:185)
+	at app//com.consol.citrus.testng.spring.TestNGCitrusSpringSupport.run(TestNGCitrusSpringSupport.java:101)
+	at app//org.testng.internal.invokers.MethodInvocationHelper.invokeHookable(MethodInvocationHelper.java:272)
+	at app//org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:669)
+	at app//org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at app//org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at app//org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+	at app//org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at app//org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at app//org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base@11.0.3/java.util.ArrayList.forEach(ArrayList.java:1540)
+	at app//org.testng.TestRunner.privateRun(TestRunner.java:829)
+	at app//org.testng.TestRunner.run(TestRunner.java:602)
+	at app//org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+	at app//org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+	at app//org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+	at app//org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at app//org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at app//org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at app//org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at app//org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at app//org.testng.TestNG.runSuites(TestNG.java:1099)
+	at app//org.testng.TestNG.run(TestNG.java:1067)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.runTests(TestNGTestClassProcessor.java:153)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.stop(TestNGTestClassProcessor.java:96)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:62)
+	at java.base@11.0.3/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@11.0.3/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base@11.0.3/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@11.0.3/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at com.sun.proxy.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:119)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:66)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+Caused by: com.consol.citrus.exceptions.ValidationException: Failed to validate JSON text:
+{&quot;id&quot;:158,&quot;color&quot;:&quot;yellow&quot;,&quot;height&quot;:0.15,&quot;material&quot;:&quot;wood&quot;,&quot;sound&quot;:&quot;quack&quot;,&quot;wingsState&quot;:&quot;ACTIVE&quot;} Number of JSON entries not equal for element: '$.', expected '5' but was '6'
+	at app//com.consol.citrus.validation.json.JsonTextMessageValidator.validateMessage(JsonTextMessageValidator.java:114)
+	at app//com.consol.citrus.validation.json.JsonTextMessageValidator.validateMessage(JsonTextMessageValidator.java:58)
+	at app//com.consol.citrus.validation.AbstractMessageValidator.validateMessage(AbstractMessageValidator.java:46)
+	at app//com.consol.citrus.actions.ReceiveMessageAction.validateMessage(ReceiveMessageAction.java:279)
+	at app//com.consol.citrus.actions.ReceiveMessageAction.doExecute(ReceiveMessageAction.java:168)
+	at app//com.consol.citrus.actions.AbstractTestAction.execute(AbstractTestAction.java:59)
+	at app//com.consol.citrus.DefaultTestCase.executeAction(DefaultTestCase.java:136)
+	... 59 more
+Caused by: java.lang.IllegalArgumentException: Number of JSON entries not equal for element: '$.', expected '5' but was '6'
+	at org.springframework.util.Assert.isTrue(Assert.java:121)
+	at com.consol.citrus.validation.json.JsonTextMessageValidator.validateJson(JsonTextMessageValidator.java:145)
+	at com.consol.citrus.validation.json.JsonTextMessageValidator.validateMessage(JsonTextMessageValidator.java:102)
+	... 65 more
+</pre>
+</span>
+</div>
+</div>
+<div id="tab1" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="failures">createMaterialRubber[0](null)</td>
+<td class="failures">0.570s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="failures">createMaterialWood[0](null)</td>
+<td class="failures">0.134s</td>
+<td class="failures">failed</td>
+</tr>
+</table>
+</div>
+<div id="tab2" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>08:50:47,549 DEBUG   util.TypeConverter| Using type converter 'spring'
+08:50:47,553 INFO  port.LoggingReporter| 
+08:50:47,553 INFO  port.LoggingReporter| ------------------------------------------------------------------------
+08:50:47,553 DEBUG port.LoggingReporter| STARTING TEST DuckCreateTest.createMaterialRubber &lt;autotests.tests.duckController&gt;
+08:50:47,553 INFO  port.LoggingReporter| 
+08:50:47,553 DEBUG trus.DefaultTestCase| Initializing test case
+08:50:47,553 DEBUG  context.TestContext| Setting variable: citrus.test.name with value: 'DuckCreateTest.createMaterialRubber'
+08:50:47,553 DEBUG  context.TestContext| Setting variable: citrus.test.package with value: 'autotests.tests.duckController'
+08:50:47,553 DEBUG trus.DefaultTestCase| Initializing test parameter 'arg0' as variable
+08:50:47,553 DEBUG  context.TestContext| Setting variable: arg0 with value: 'com.consol.citrus.DefaultTestCaseRunner@672f69f7'
+08:50:47,553 DEBUG trus.DefaultTestCase| Test variables:
+08:50:47,553 DEBUG trus.DefaultTestCase| citrus.test.package = autotests.tests.duckController
+08:50:47,554 DEBUG trus.DefaultTestCase| arg0 = com.consol.citrus.DefaultTestCaseRunner@672f69f7
+08:50:47,554 DEBUG trus.DefaultTestCase| citrus.test.name = DuckCreateTest.createMaterialRubber
+08:50:47,570 INFO  port.LoggingReporter| 
+08:50:47,571 DEBUG port.LoggingReporter| TEST STEP 0: send
+08:50:47,590 DEBUG ltCorrelationManager| Saving correlation key for 'citrus_message_correlator_yellowDuckService'
+08:50:47,590 DEBUG  context.TestContext| Setting variable: citrus_message_correlator_yellowDuckService with value: 'citrus_message_id = '4c1673f4-0c46-4ac9-866f-bf38c817c6be''
+08:50:47,590 DEBUG  context.TestContext| Setting variable: citrus_message_replyTo_citrus_message_correlator_yellowDuckService with value: 'http://localhost:2222/api/duck/create'
+08:50:47,591 INFO     client.HttpClient| Sending HTTP message to: 'http://localhost:2222/api/duck/create'
+08:50:47,591 DEBUG    client.HttpClient| Message to send:
+{&quot;color&quot;:&quot;yellow&quot;,&quot;height&quot;:0.15,&quot;material&quot;:&quot;rubber&quot;,&quot;sound&quot;:&quot;quack&quot;,&quot;wingsState&quot;:&quot;ACTIVE&quot;}
+08:50:47,601 DEBUG ingClientInterceptor| Sending Http request message
+08:50:47,608 DEBUG   util.TypeConverter| Using type converter 'spring'
+08:50:47,739 DEBUG ingClientInterceptor| Received Http response message
+08:50:47,739 DEBUG   util.TypeConverter| Using type converter 'spring'
+08:50:47,742 INFO     client.HttpClient| HTTP message was sent to endpoint: 'http://localhost:2222/api/duck/create'
+08:50:47,743 DEBUG ltCorrelationManager| Saving correlated object for 'citrus_message_id = '4c1673f4-0c46-4ac9-866f-bf38c817c6be''
+08:50:47,743 INFO  port.LoggingReporter| 
+08:50:47,743 DEBUG port.LoggingReporter| TEST STEP 0 SUCCESS
+08:50:47,766 INFO  port.LoggingReporter| 
+08:50:47,767 DEBUG port.LoggingReporter| TEST STEP 0: receive
+08:50:47,767 DEBUG ngCorrelationManager| Get correlation key for 'citrus_message_correlator_yellowDuckService'
+08:50:47,767 DEBUG ltCorrelationManager| Finding correlated object for 'citrus_message_id = '4c1673f4-0c46-4ac9-866f-bf38c817c6be''
+08:50:47,767 DEBUG ReceiveMessageAction| Received message:
+HTTPMESSAGE [id: feab14ab-79cc-41c0-8234-11b70ea8b8e8, payload: {
+  &quot;id&quot;: 157,
+  &quot;color&quot;: &quot;yellow&quot;,
+  &quot;height&quot;: 0.15,
+  &quot;material&quot;: &quot;rubber&quot;,
+  &quot;sound&quot;: &quot;quack&quot;,
+  &quot;wingsState&quot;: &quot;ACTIVE&quot;
+}][headers: {Transfer-Encoding=chunked, Connection=keep-alive, contentType=application/json, Date=1738201847000, citrus_message_id=feab14ab-79cc-41c0-8234-11b70ea8b8e8, citrus_message_timestamp=1738201847743, Keep-Alive=timeout=60, Content-Type=application/json, citrus_http_status_code=200, citrus_http_reason_phrase=OK, citrus_http_version=HTTP/1.1}]
+08:50:47,767 DEBUG oadVariableExtractor| Reading path elements.
+08:50:47,777 DEBUG athVariableExtractor| Reading JSON elements with JSONPath
+08:50:47,779 DEBUG athVariableExtractor| Evaluating JSONPath expression: $.id
+08:50:48,086 DEBUG  context.TestContext| Setting variable: duckId with value: '157'
+08:50:48,092 DEBUG ReceiveMessageAction| Control message:
+HTTPMESSAGE [id: 2ac16255-4464-4d2c-98c3-7dbd1f2790ca, payload: {
+  &quot;color&quot;: &quot;yellow&quot;,
+  &quot;height&quot;: 0.15,
+  &quot;material&quot;: &quot;rubber&quot;,
+  &quot;sound&quot;: &quot;quack&quot;,
+  &quot;wingsState&quot;: &quot;ACTIVE&quot;
+}][headers: {citrus_message_id=2ac16255-4464-4d2c-98c3-7dbd1f2790ca, citrus_message_timestamp=1738201847743, citrus_http_reason_phrase=OK, citrus_http_status_code=200, Content-Type=application/json, citrus_message_type=XML}]
+08:50:48,092 DEBUG ageValidatorRegistry| Found 3 message validators for message
+08:50:48,092 DEBUG ssageHeaderValidator| Start message header validation ...
+08:50:48,092 DEBUG faultHeaderValidator| Validating header element: citrus_http_reason_phrase='OK': OK.
+08:50:48,093 DEBUG faultHeaderValidator| Validating header element: citrus_http_status_code='200': OK.
+08:50:48,095 DEBUG faultHeaderValidator| Validating header element: Content-Type='application/json': OK.
+08:50:48,095 INFO  ssageHeaderValidator| Message header validation successful: All values OK
+08:50:48,097 DEBUG TextMessageValidator| Start JSON message validation ...
+08:50:48,097 DEBUG JsonSchemaValidation| Starting Json schema validation ...
+08:50:48,097 INFO  JsonSchemaValidation| Json schema validation successful: All values OK
+08:50:48,109 DEBUG trus.DefaultTestCase| Entering finally block in test case
+08:50:48,109 INFO  port.LoggingReporter| 
+08:50:48,109 DEBUG port.LoggingReporter| TEST STEP 0: DuckCreateTest$$Lambda$659/0x00000001005aac40
+08:50:48,109 INFO  port.LoggingReporter| 
+08:50:48,109 DEBUG port.LoggingReporter| TEST STEP 0: sql
+08:50:48,110 DEBUG ons.ExecuteSQLAction| Executing SQL statement: DELETE FROM DUCK WHERE ID=157
+08:50:48,112 INFO  ons.ExecuteSQLAction| SQL statement execution successful
+08:50:48,112 INFO  port.LoggingReporter| 
+08:50:48,112 DEBUG port.LoggingReporter| TEST STEP 0 SUCCESS
+08:50:48,112 INFO  port.LoggingReporter| 
+08:50:48,112 DEBUG port.LoggingReporter| TEST STEP 0 SUCCESS
+08:50:48,112 INFO  port.LoggingReporter| 
+08:50:48,112 ERROR port.LoggingReporter| TEST FAILED DuckCreateTest.createMaterialRubber &lt;autotests.tests.duckController&gt; Nested exception is: 
+com.consol.citrus.exceptions.ValidationException: Failed to validate JSON text:
+{&quot;id&quot;:157,&quot;color&quot;:&quot;yellow&quot;,&quot;height&quot;:0.15,&quot;material&quot;:&quot;rubber&quot;,&quot;sound&quot;:&quot;quack&quot;,&quot;wingsState&quot;:&quot;ACTIVE&quot;} Number of JSON entries not equal for element: '$.', expected '5' but was '6'
+	at com.consol.citrus.validation.json.JsonTextMessageValidator.validateMessage(JsonTextMessageValidator.java:114)
+	at com.consol.citrus.validation.json.JsonTextMessageValidator.validateMessage(JsonTextMessageValidator.java:58)
+	at com.consol.citrus.validation.AbstractMessageValidator.validateMessage(AbstractMessageValidator.java:46)
+	at com.consol.citrus.actions.ReceiveMessageAction.validateMessage(ReceiveMessageAction.java:279)
+	at com.consol.citrus.actions.ReceiveMessageAction.doExecute(ReceiveMessageAction.java:168)
+	at com.consol.citrus.actions.AbstractTestAction.execute(AbstractTestAction.java:59)
+	at com.consol.citrus.DefaultTestCase.executeAction(DefaultTestCase.java:136)
+	at com.consol.citrus.DefaultTestCaseRunner.run(DefaultTestCaseRunner.java:125)
+	at com.consol.citrus.TestActionRunner.$(TestActionRunner.java:35)
+	at autotests.clients.DuckActionsClient.validateResponseWithExtractId(DuckActionsClient.java:88)
+	at autotests.tests.duckController.DuckCreateTest.createMaterialRubber(DuckCreateTest.java:31)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:282)
+	at com.consol.citrus.testng.TestNGHelper.lambda$invokeTestMethod$1(TestNGHelper.java:82)
+	at com.consol.citrus.common.DefaultTestLoader.lambda$doLoad$1(DefaultTestLoader.java:116)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
+	at com.consol.citrus.common.DefaultTestLoader.doLoad(DefaultTestLoader.java:116)
+	at com.consol.citrus.common.DefaultTestLoader.load(DefaultTestLoader.java:94)
+	at com.consol.citrus.testng.TestNGHelper.invokeTestMethod(TestNGHelper.java:83)
+	at com.consol.citrus.testng.spring.TestNGCitrusSpringSupport.run(TestNGCitrusSpringSupport.java:185)
+	at com.consol.citrus.testng.spring.TestNGCitrusSpringSupport.run(TestNGCitrusSpringSupport.java:101)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeHookable(MethodInvocationHelper.java:272)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:669)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
+	at org.testng.TestRunner.privateRun(TestRunner.java:829)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.runTests(TestNGTestClassProcessor.java:153)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.stop(TestNGTestClassProcessor.java:96)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:62)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at com.sun.proxy.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:119)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:66)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+Caused by: java.lang.IllegalArgumentException: Number of JSON entries not equal for element: '$.', expected '5' but was '6'
+	at org.springframework.util.Assert.isTrue(Assert.java:121)
+	at com.consol.citrus.validation.json.JsonTextMessageValidator.validateJson(JsonTextMessageValidator.java:145)
+	at com.consol.citrus.validation.json.JsonTextMessageValidator.validateMessage(JsonTextMessageValidator.java:102)
+	... 65 more
+08:50:48,113 INFO  port.LoggingReporter| ------------------------------------------------------------------------
+08:50:48,113 INFO  port.LoggingReporter| 
+08:50:48,220 DEBUG   util.TypeConverter| Using type converter 'spring'
+08:50:48,223 INFO  port.LoggingReporter| 
+08:50:48,223 INFO  port.LoggingReporter| ------------------------------------------------------------------------
+08:50:48,223 DEBUG port.LoggingReporter| STARTING TEST DuckCreateTest.createMaterialWood &lt;autotests.tests.duckController&gt;
+08:50:48,223 INFO  port.LoggingReporter| 
+08:50:48,223 DEBUG trus.DefaultTestCase| Initializing test case
+08:50:48,223 DEBUG  context.TestContext| Setting variable: citrus.test.name with value: 'DuckCreateTest.createMaterialWood'
+08:50:48,223 DEBUG  context.TestContext| Setting variable: citrus.test.package with value: 'autotests.tests.duckController'
+08:50:48,223 DEBUG trus.DefaultTestCase| Initializing test parameter 'arg0' as variable
+08:50:48,223 DEBUG  context.TestContext| Setting variable: arg0 with value: 'com.consol.citrus.DefaultTestCaseRunner@2262bc86'
+08:50:48,223 DEBUG trus.DefaultTestCase| Test variables:
+08:50:48,223 DEBUG trus.DefaultTestCase| citrus.test.package = autotests.tests.duckController
+08:50:48,224 DEBUG trus.DefaultTestCase| arg0 = com.consol.citrus.DefaultTestCaseRunner@2262bc86
+08:50:48,225 DEBUG trus.DefaultTestCase| citrus.test.name = DuckCreateTest.createMaterialWood
+08:50:48,227 INFO  port.LoggingReporter| 
+08:50:48,227 DEBUG port.LoggingReporter| TEST STEP 0: send
+08:50:48,260 DEBUG ltCorrelationManager| Saving correlation key for 'citrus_message_correlator_yellowDuckService'
+08:50:48,260 DEBUG  context.TestContext| Setting variable: citrus_message_correlator_yellowDuckService with value: 'citrus_message_id = 'f1cb5ee2-c94b-4f36-a34b-1818e01e71ee''
+08:50:48,260 DEBUG  context.TestContext| Setting variable: citrus_message_replyTo_citrus_message_correlator_yellowDuckService with value: 'http://localhost:2222/api/duck/create'
+08:50:48,260 INFO     client.HttpClient| Sending HTTP message to: 'http://localhost:2222/api/duck/create'
+08:50:48,260 DEBUG    client.HttpClient| Message to send:
+{&quot;color&quot;:&quot;yellow&quot;,&quot;height&quot;:0.15,&quot;material&quot;:&quot;wood&quot;,&quot;sound&quot;:&quot;quack&quot;,&quot;wingsState&quot;:&quot;ACTIVE&quot;}
+08:50:48,261 DEBUG ingClientInterceptor| Sending Http request message
+08:50:48,262 DEBUG   util.TypeConverter| Using type converter 'spring'
+08:50:48,285 DEBUG ingClientInterceptor| Received Http response message
+08:50:48,287 DEBUG   util.TypeConverter| Using type converter 'spring'
+08:50:48,289 INFO     client.HttpClient| HTTP message was sent to endpoint: 'http://localhost:2222/api/duck/create'
+08:50:48,290 DEBUG ltCorrelationManager| Saving correlated object for 'citrus_message_id = 'f1cb5ee2-c94b-4f36-a34b-1818e01e71ee''
+08:50:48,290 INFO  port.LoggingReporter| 
+08:50:48,290 DEBUG port.LoggingReporter| TEST STEP 0 SUCCESS
+08:50:48,290 INFO  port.LoggingReporter| 
+08:50:48,290 DEBUG port.LoggingReporter| TEST STEP 0: receive
+08:50:48,290 DEBUG ngCorrelationManager| Get correlation key for 'citrus_message_correlator_yellowDuckService'
+08:50:48,291 DEBUG ltCorrelationManager| Finding correlated object for 'citrus_message_id = 'f1cb5ee2-c94b-4f36-a34b-1818e01e71ee''
+08:50:48,292 DEBUG ReceiveMessageAction| Received message:
+HTTPMESSAGE [id: 8b8082a6-2886-4bff-b886-e8c5fee652d6, payload: {
+  &quot;id&quot;: 158,
+  &quot;color&quot;: &quot;yellow&quot;,
+  &quot;height&quot;: 0.15,
+  &quot;material&quot;: &quot;wood&quot;,
+  &quot;sound&quot;: &quot;quack&quot;,
+  &quot;wingsState&quot;: &quot;ACTIVE&quot;
+}][headers: {Transfer-Encoding=chunked, Connection=keep-alive, contentType=application/json, Date=1738201847000, citrus_message_id=8b8082a6-2886-4bff-b886-e8c5fee652d6, citrus_message_timestamp=1738201848290, Keep-Alive=timeout=60, Content-Type=application/json, citrus_http_status_code=200, citrus_http_reason_phrase=OK, citrus_http_version=HTTP/1.1}]
+08:50:48,292 DEBUG oadVariableExtractor| Reading path elements.
+08:50:48,293 DEBUG athVariableExtractor| Reading JSON elements with JSONPath
+08:50:48,294 DEBUG athVariableExtractor| Evaluating JSONPath expression: $.id
+08:50:48,295 DEBUG  context.TestContext| Setting variable: duckId with value: '158'
+08:50:48,298 DEBUG ReceiveMessageAction| Control message:
+HTTPMESSAGE [id: 818d9f04-d404-42b0-9177-9a260fd1354e, payload: {
+  &quot;color&quot;: &quot;yellow&quot;,
+  &quot;height&quot;: 0.15,
+  &quot;material&quot;: &quot;wood&quot;,
+  &quot;sound&quot;: &quot;quack&quot;,
+  &quot;wingsState&quot;: &quot;ACTIVE&quot;
+}][headers: {citrus_message_id=818d9f04-d404-42b0-9177-9a260fd1354e, citrus_message_timestamp=1738201848290, citrus_http_reason_phrase=OK, citrus_http_status_code=200, Content-Type=application/json, citrus_message_type=XML}]
+08:50:48,298 DEBUG ageValidatorRegistry| Found 3 message validators for message
+08:50:48,298 DEBUG ssageHeaderValidator| Start message header validation ...
+08:50:48,300 DEBUG faultHeaderValidator| Validating header element: citrus_http_reason_phrase='OK': OK.
+08:50:48,301 DEBUG faultHeaderValidator| Validating header element: citrus_http_status_code='200': OK.
+08:50:48,301 DEBUG faultHeaderValidator| Validating header element: Content-Type='application/json': OK.
+08:50:48,301 INFO  ssageHeaderValidator| Message header validation successful: All values OK
+08:50:48,301 DEBUG TextMessageValidator| Start JSON message validation ...
+08:50:48,301 DEBUG JsonSchemaValidation| Starting Json schema validation ...
+08:50:48,301 INFO  JsonSchemaValidation| Json schema validation successful: All values OK
+08:50:48,304 DEBUG trus.DefaultTestCase| Entering finally block in test case
+08:50:48,304 INFO  port.LoggingReporter| 
+08:50:48,304 DEBUG port.LoggingReporter| TEST STEP 0: DuckCreateTest$$Lambda$664/0x00000001005af040
+08:50:48,304 INFO  port.LoggingReporter| 
+08:50:48,304 DEBUG port.LoggingReporter| TEST STEP 0: sql
+08:50:48,306 DEBUG ons.ExecuteSQLAction| Executing SQL statement: DELETE FROM DUCK WHERE ID=158
+08:50:48,309 INFO  ons.ExecuteSQLAction| SQL statement execution successful
+08:50:48,309 INFO  port.LoggingReporter| 
+08:50:48,309 DEBUG port.LoggingReporter| TEST STEP 0 SUCCESS
+08:50:48,309 INFO  port.LoggingReporter| 
+08:50:48,309 DEBUG port.LoggingReporter| TEST STEP 0 SUCCESS
+08:50:48,309 INFO  port.LoggingReporter| 
+08:50:48,309 ERROR port.LoggingReporter| TEST FAILED DuckCreateTest.createMaterialWood &lt;autotests.tests.duckController&gt; Nested exception is: 
+com.consol.citrus.exceptions.ValidationException: Failed to validate JSON text:
+{&quot;id&quot;:158,&quot;color&quot;:&quot;yellow&quot;,&quot;height&quot;:0.15,&quot;material&quot;:&quot;wood&quot;,&quot;sound&quot;:&quot;quack&quot;,&quot;wingsState&quot;:&quot;ACTIVE&quot;} Number of JSON entries not equal for element: '$.', expected '5' but was '6'
+	at com.consol.citrus.validation.json.JsonTextMessageValidator.validateMessage(JsonTextMessageValidator.java:114)
+	at com.consol.citrus.validation.json.JsonTextMessageValidator.validateMessage(JsonTextMessageValidator.java:58)
+	at com.consol.citrus.validation.AbstractMessageValidator.validateMessage(AbstractMessageValidator.java:46)
+	at com.consol.citrus.actions.ReceiveMessageAction.validateMessage(ReceiveMessageAction.java:279)
+	at com.consol.citrus.actions.ReceiveMessageAction.doExecute(ReceiveMessageAction.java:168)
+	at com.consol.citrus.actions.AbstractTestAction.execute(AbstractTestAction.java:59)
+	at com.consol.citrus.DefaultTestCase.executeAction(DefaultTestCase.java:136)
+	at com.consol.citrus.DefaultTestCaseRunner.run(DefaultTestCaseRunner.java:125)
+	at com.consol.citrus.TestActionRunner.$(TestActionRunner.java:35)
+	at autotests.clients.DuckActionsClient.validateResponseWithExtractId(DuckActionsClient.java:88)
+	at autotests.tests.duckController.DuckCreateTest.createMaterialWood(DuckCreateTest.java:44)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:282)
+	at com.consol.citrus.testng.TestNGHelper.lambda$invokeTestMethod$1(TestNGHelper.java:82)
+	at com.consol.citrus.common.DefaultTestLoader.lambda$doLoad$1(DefaultTestLoader.java:116)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
+	at com.consol.citrus.common.DefaultTestLoader.doLoad(DefaultTestLoader.java:116)
+	at com.consol.citrus.common.DefaultTestLoader.load(DefaultTestLoader.java:94)
+	at com.consol.citrus.testng.TestNGHelper.invokeTestMethod(TestNGHelper.java:83)
+	at com.consol.citrus.testng.spring.TestNGCitrusSpringSupport.run(TestNGCitrusSpringSupport.java:185)
+	at com.consol.citrus.testng.spring.TestNGCitrusSpringSupport.run(TestNGCitrusSpringSupport.java:101)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeHookable(MethodInvocationHelper.java:272)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:669)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
+	at org.testng.TestRunner.privateRun(TestRunner.java:829)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.runTests(TestNGTestClassProcessor.java:153)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.stop(TestNGTestClassProcessor.java:96)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:62)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at com.sun.proxy.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:119)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:66)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+Caused by: java.lang.IllegalArgumentException: Number of JSON entries not equal for element: '$.', expected '5' but was '6'
+	at org.springframework.util.Assert.isTrue(Assert.java:121)
+	at com.consol.citrus.validation.json.JsonTextMessageValidator.validateJson(JsonTextMessageValidator.java:145)
+	at com.consol.citrus.validation.json.JsonTextMessageValidator.validateMessage(JsonTextMessageValidator.java:102)
+	... 65 more
+08:50:48,311 INFO  port.LoggingReporter| ------------------------------------------------------------------------
+08:50:48,311 INFO  port.LoggingReporter| 
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 8.8</a> at 30 янв. 2025 г., 8:50:49</p>
+</div>
+</div>
+</body>
+</html>
