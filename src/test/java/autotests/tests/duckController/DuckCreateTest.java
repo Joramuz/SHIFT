@@ -28,7 +28,7 @@ public class DuckCreateTest extends DuckActionsClient {
     DuckCreate duck5 = new DuckCreate().color("yellow").height(0.15).material("rubber").sound("quack").wingsState(WingsState.FIXED);
 
     @Flaky
-    @Test(description = "Создание утки с material = rubber ", dataProvider = "duckList")
+    @Test(description = "Успешное создание утки", dataProvider = "duckList")
     @CitrusTest
     @CitrusParameters({"payload", "response", "runner"})
     public void createMaterialRubber(DuckCreate payload, DuckCreate response, @Optional @CitrusResource TestCaseRunner runner) {
