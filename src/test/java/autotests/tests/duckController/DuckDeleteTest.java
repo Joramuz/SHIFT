@@ -21,16 +21,17 @@ public class DuckDeleteTest extends DuckActionsClient {
     @CitrusTest
     public void deleteDuck(@Optional @CitrusResource TestCaseRunner runner) {
         AtomicInteger id = new AtomicInteger();
-        runner.variable("duckId",randomId());
+        int count;
+        do{
+            id.set(Integer.parseInt(randomId()));
+           count = countIdInDB(runner,id);
+        } while (count !=0);
+        runner.variable("duckId",id);
         databaseUpdate(runner,
                 "insert into DUCK (id, color, height, material, sound, wings_state)\n" +
                         "values (${duckId}, 'yellow', 0.15, 'rubber', 'quack','ACTIVE');");
-        runner.$(a -> {
-            id.set(Integer.parseInt(a.getVariable("duckId")));
-        });
         delete(runner, "${duckId}");
         validateResponseJson(runner, "duckDeleteTest/successfulDelete.json", HttpStatus.OK);
-        String ducksIds = extractAllIds(runner);
-        if (ducksIds.contains(Integer.toString(id.get()))) throw new AssertionError("Duck has not been deleted");
+        validateDeleteIdInDB(runner, id);
     }
 }

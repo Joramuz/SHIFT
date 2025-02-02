@@ -24,7 +24,13 @@ public class DuckQuackTest extends DuckActionsClient {
     @Test(description = "Корректный чётный id , корректный звук ")
     @CitrusTest
     public void quackEvenId(@Optional @CitrusResource TestCaseRunner runner) {
-        runner.variable("duckId",randomId(0));
+        AtomicInteger id = new AtomicInteger();
+        int count;
+        do{
+            id.set(Integer.parseInt(randomId(0)));
+            count = countIdInDB(runner,id);
+        } while (count !=0);
+        runner.variable("duckId",id);;
         runner.$(
                 doFinally().actions(context ->
                         databaseUpdate(runner, "DELETE FROM DUCK WHERE ID=${duckId}")));
@@ -38,7 +44,13 @@ public class DuckQuackTest extends DuckActionsClient {
     @Test(description = "Корректный нечётный id, корректный звук ")
     @CitrusTest
     public void quackNotEvenId(@Optional @CitrusResource TestCaseRunner runner) {
-        runner.variable("duckId",randomId(1));
+        AtomicInteger id = new AtomicInteger();
+        int count;
+        do{
+            id.set(Integer.parseInt(randomId(1)));
+            count = countIdInDB(runner,id);
+        } while (count !=0);
+        runner.variable("duckId",id);
         runner.$(
                 doFinally().actions(context ->
                         databaseUpdate(runner, "DELETE FROM DUCK WHERE ID=${duckId}")));

@@ -17,6 +17,7 @@ import com.consol.citrus.message.builder.ObjectMappingPayloadBuilder;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.util.Random;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import static com.consol.citrus.actions.ExecuteSQLAction.Builder.sql;
 import static com.consol.citrus.actions.ExecuteSQLQueryAction.Builder.query;
@@ -166,22 +167,50 @@ public class DuckActionsClient extends BaseTest {
                         .validate("WINGS_STATE", wingsState));
     }
 
-    @Step("Метод получения рандомного id")
+    @Step("Метод создания рандомного id(чет/нечет)")
     public String randomId(int value) {
         Random random = new Random();
         int randomInt;
         do {
-            randomInt = random.nextInt();
+            randomInt = random.nextInt(Integer.MAX_VALUE) + 1;
         } while (randomInt % 2 != value);
         String id = Integer.toString(randomInt);
         return id;
     }
 
-    @Step("Метод получения рандомного id")
+    @Step("Метод создания рандомного id")
     public String randomId() {
         Random random = new Random();
-        int randomInt = random.nextInt();
+        int randomInt = random.nextInt(Integer.MAX_VALUE) + 1;
         String id = Integer.toString(randomInt);
         return id;
+    }
+
+    @Step("Метод  записи id в переменную")
+    public void writeIdToVariable(TestCaseRunner runner, AtomicInteger id){
+        runner.$(a -> {
+            id.set(Integer.parseInt(a.getVariable("duckId")));
+        });
+    }
+
+    @Step("Метод нахождения количества строк с заданным id")
+    public int countIdInDB(TestCaseRunner runner, AtomicInteger id){
+        final int[] count = new int[1] ;
+
+        runner.$(
+                query(testDb)
+                        .statement("SELECT COUNT(*) AS countValues FROM DUCK WHERE ID=" + id)
+                        .extract("countValues", "count"));
+        runner.$(a -> {
+            count[0] = (Integer.parseInt(a.getVariable("count")));
+        });
+        return count[0];
+    }
+    @Step("Метод  проверки существования id в базе данных")
+    public void validateDeleteIdInDB(TestCaseRunner runner, AtomicInteger id){
+        runner.$(
+                query(testDb)
+                        .statement("SELECT COUNT(*) AS countIds FROM DUCK WHERE ID=" + id)
+                        .validate("countIds","0"));
     }
 }

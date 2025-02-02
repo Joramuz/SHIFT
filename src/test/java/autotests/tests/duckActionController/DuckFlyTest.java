@@ -13,6 +13,9 @@ import io.qameta.allure.Flaky;
 import org.springframework.http.HttpStatus;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Test;
+
+import java.util.concurrent.atomic.AtomicInteger;
+
 import static com.consol.citrus.container.FinallySequence.Builder.doFinally;
 
 @Epic("Тесты на duck-action-controller")
@@ -23,7 +26,13 @@ public class DuckFlyTest extends DuckActionsClient {
     @Test(description = "Существующий id с активными крыльями ")
     @CitrusTest
     public void flyActiveWings(@Optional @CitrusResource TestCaseRunner runner) {
-        runner.variable("duckId",randomId());
+        AtomicInteger id = new AtomicInteger();
+        int count;
+        do{
+            id.set(Integer.parseInt(randomId()));
+            count = countIdInDB(runner,id);
+        } while (count !=0);
+        runner.variable("duckId",id);
         runner.$(
                 doFinally().actions(context ->
                         databaseUpdate(runner, "DELETE FROM DUCK WHERE ID=${duckId}")));
@@ -39,7 +48,13 @@ public class DuckFlyTest extends DuckActionsClient {
     @Test(description = "Существующий id со связанными крыльями")
     @CitrusTest
     public void flyFixedWings(@Optional @CitrusResource TestCaseRunner runner) {
-        runner.variable("duckId",randomId());
+        AtomicInteger id = new AtomicInteger();
+        int count;
+        do{
+            id.set(Integer.parseInt(randomId()));
+            count = countIdInDB(runner,id);
+        } while (count !=0);
+        runner.variable("duckId",id);
         runner.$(
                 doFinally().actions(context ->
                         databaseUpdate(runner, "DELETE FROM DUCK WHERE ID=${duckId}")));
@@ -54,7 +69,13 @@ public class DuckFlyTest extends DuckActionsClient {
     @Test(description = "Существующий id с крыльями в неопределенном состоянии ")
     @CitrusTest
     public void flyUndefinedWings(@Optional @CitrusResource TestCaseRunner runner) {
-        runner.variable("duckId",randomId());
+        AtomicInteger id = new AtomicInteger();
+        int count;
+        do{
+            id.set(Integer.parseInt(randomId()));
+            count = countIdInDB(runner,id);
+        } while (count !=0);
+        runner.variable("duckId",id);
         runner.$(
                 doFinally().actions(context ->
                         databaseUpdate(runner, "DELETE FROM DUCK WHERE ID=${duckId}")));

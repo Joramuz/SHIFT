@@ -23,7 +23,13 @@ public class DuckPropertiesTest extends DuckActionsClient {
     @Test(description = " ID - целое четное число. Материал wood ")
     @CitrusTest
     public void propertiesEvenId(@Optional @CitrusResource TestCaseRunner runner) {
-        runner.variable("duckId",randomId(0));
+        AtomicInteger id = new AtomicInteger();
+        int count;
+        do{
+            id.set(Integer.parseInt(randomId(0)));
+            count = countIdInDB(runner,id);
+        } while (count !=0);
+        runner.variable("duckId",id);
         runner.$(
                 doFinally().actions(context ->
                         databaseUpdate(runner, "DELETE FROM DUCK WHERE ID=${duckId}")));
@@ -44,7 +50,13 @@ public class DuckPropertiesTest extends DuckActionsClient {
     @Test(description = "ID - целое нечетное число. Материал rubber ")
     @CitrusTest
     public void propertiesNotEvenId(@Optional @CitrusResource TestCaseRunner runner) {
-        runner.variable("duckId",randomId(1));
+        AtomicInteger id = new AtomicInteger();
+        int count;
+        do{
+            id.set(Integer.parseInt(randomId(1)));
+            count = countIdInDB(runner,id);
+        } while (count !=0);
+        runner.variable("duckId",id);
         runner.$(
                 doFinally().actions(context ->
                         databaseUpdate(runner, "DELETE FROM DUCK WHERE ID=${duckId}")));
@@ -55,7 +67,7 @@ public class DuckPropertiesTest extends DuckActionsClient {
         validateResponse(runner, "{\n"
                 + "  \"color\": \"" + "yellow" + "\",\n"
                 + "  \"height\": " + 0.15 + ",\n"
-                + "  \"material\": \"" + "rubber" + "\",\n"
+                + "  \"material\": \"" + "wood" + "\",\n"
                 + "  \"sound\": \"" + "quack" + "\",\n"
                 + "  \"wingsState\": \"" + "ACTIVE"
                 + "\"\n" + "}", HttpStatus.OK);
